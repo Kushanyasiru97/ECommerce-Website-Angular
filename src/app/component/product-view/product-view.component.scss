@@ -1,22 +1,65 @@
-.card-img{
-    width: 150px;
-    height: 145px;
-    margin-bottom: 15px;
+/* Container Styles */
+.container-fluid {
+    background-color: black; /* Black background color */
+    padding: 20px; /* Padding for the container */
 }
 
-body{
-    margin: 0;
-    font-weight: 400;
-    line-height: 1.5385;
-    color: #333;
-    text-align: left;
-    //background-color: #2196;
+/* Header Styles */
+.header h3 {
+    color: white; /* White text color */
+    font-size: 1.5rem; /* Font size */
+    text-align: center; /* Center align text */
 }
 
-.card-img-action{
-    position: relative;
+/* Card Styles */
+.card {
+    border: none; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition */
+    height: 100%; /* Ensure all cards have the same height */
 }
 
-a{
-    text-decoration: none;
+.card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Box shadow on hover for depth */
+}
+
+.card-img {
+    border-top-left-radius: 10px; /* Rounded corners for image */
+    border-top-right-radius: 10px; /* Rounded corners for image */
+}
+
+.card-body {
+    padding: 20px; /* Padding for card body */
+    height: 100%; /* Ensure all card bodies have the same height */
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: space-between; /* Space evenly between content */
+}
+
+.card-body.bg-light {
+    background-color: #f8f9fa; /* Light background color */
+}
+
+.card-body h6 {
+    margin-bottom: 5px; /* Space below heading */
+}
+
+.card-body h3 {
+    margin-bottom: 15px; /* Space below price */
+}
+
+.card-body button {
+    width: 100%; /* Full width button */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header h3 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Space between cards on smaller screens */
+    }
 }
