@@ -9,7 +9,10 @@ import { product } from '../product-view/productmodel';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit{
-  productdata: any|product;
+  productdata: any|product[];
+  showadd:boolean = true;
+  showremove: boolean = false;
+
   constructor(private api: ApiService, private activatedroute: ActivatedRoute){}
   ngOnInit(): void {
     let productid = this.activatedroute.snapshot.paramMap.get('productid');
@@ -17,6 +20,19 @@ export class ProductDetailComponent implements OnInit{
       this.productdata = res;
       console.log(res)
     })
+  }
+
+  addtocart(productdata:product){
+    this.showadd = false;
+    this.showremove = true;
+    this.api.addtocart(productdata);
+
+  }
+
+  removeitem(productdata:product){
+    this.showadd = true;
+    this.showremove = false;
+    this.api.removecartitem(productdata)
   }
 
 }
